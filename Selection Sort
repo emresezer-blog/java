@@ -1,0 +1,44 @@
+
+import java.util.Random;
+
+public class SelectionSort {
+
+    public static void main(String[] args) {
+        Random r = new Random();
+        int size = 10;
+        int min = 0;
+        int[] array = new int[size];
+
+        System.out.print("Array: ");
+
+        for (int i = 0; i < size; i++) {
+            array[i] = r.nextInt(100) + 1;
+            System.out.print(" " + array[i]);
+        }
+
+        System.out.println("\n");
+
+        for (int x = 0; x < size; x++) {
+            min = x;
+            for (int y = (x+1); y < size; y++) {
+                if (array[y] < array[min]) {
+                    min = y;
+                }
+            }
+
+            if (min != x) {
+                // XOR Swap Algorithm
+                array[x] = array[x] ^ array[min];
+                array[min] = array[x] ^ array[min];
+                array[x] = array[x] ^ array[min];
+            }
+
+        }
+
+        System.out.print("Sorted: ");
+        for (int x = 0; x < size; x++) {
+            System.out.print(array[x] + " ");
+        }
+        System.out.println();
+    }
+}
