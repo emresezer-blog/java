@@ -1,0 +1,93 @@
+public static int [] selectionsort(int [] A,int n)
+
+{
+
+  int tmp;
+
+  int min;
+
+
+
+  for(int i=0; i < n-1; i++)
+
+  {
+
+    min=i;
+
+
+
+    for(int j=i; j < n; j++)
+
+    {
+
+      if (A[j] < A[min]){
+
+
+
+        min=j;
+
+      }
+
+
+
+    }
+
+      tmp=A[i];
+
+      A[i]=A[min];
+
+      A[min]=tmp;
+
+  }
+
+  return A;
+
+}
+
+
+
+
+
+
+
+
+
+
+public void bubblesort(int [] A) // bir diziyi parametre alan fonksiyon
+
+{
+
+
+
+   int tmp;
+
+
+
+  for(int i=0; i<A.length; i++)
+
+  {
+
+//    for(int j=1; j<A.length-i+1; j++) şeklinde de döngü yazılabilir
+
+      for(int j=A.length-1 ; j>i;j--) //i'ye kadar olan kısmı sabitlendiği için tekrar geçişlerde kontrolü gerekmemektedir.
+
+    {
+
+      if(A[j-1]>A[j])
+
+      {
+
+        tmp=A[j-1];
+
+        A[j-1]=A[j];
+
+        A[j]=tmp;
+
+      }
+
+    }
+
+  }
+
+}
+
